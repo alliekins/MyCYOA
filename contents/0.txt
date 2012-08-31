@@ -1,3 +1,0 @@
-Welcome to the Game Jame 2012(TM) Choose Your Own Adventure Engine(TM) by Howland(R)
-
-I wrote a small CYOA just to prove it works.
