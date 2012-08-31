@@ -18,6 +18,10 @@ class Page
 		for ($i=0; $i < count($this->linksTo); $i++) {
 			$outstr .= $this->linksTo[$i]->toString();
 		}
+		if (count($this->linksTo)==0) {
+			$endPage = new PageLink(0, "Error: end of story. Go home.");
+			$outstr .= $endPage->toString();
+		}
 		return $outstr;
 	}
 
@@ -76,7 +80,9 @@ class CYOA
 	}
 	
 	function addLink($pagenum, $linkedTo, $linkText) {
-		$this->pages[$pagenum]->addLink($linkedTo, $linkText);
+		if (isset($this->pages[$pagenum])) {
+			$this->pages[$pagenum]->addLink($linkedTo, $linkText);
+		}
 	}
 
 	function pageText($pagenum) {
@@ -97,7 +103,7 @@ class CYOA
 
 	function printPage($pagenum) {
 		if (isset($this->pages[$pagenum])) {
-			return $this->pages[$pagenum]->toString();
+			return "Page " . $pagenum . "<hr>" . $this->pages[$pagenum]->toString();
 		} else {
 			return "ERROR: Page " . $pagenum . " does not exist." . 
 				"<br><a href=changepage?page=0>Go Home</a>";

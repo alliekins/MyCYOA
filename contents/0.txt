@@ -1,3 +1,3 @@
-Welcome to my Choose Your Own Adventure!
+Welcome to the Game Jame 2012(TM) Choose Your Own Adventure Engine(TM) by Howland(R)
 
-You are about to embark upon a magical journey to lands unknown.
+I wrote a small CYOA just to prove it works.
